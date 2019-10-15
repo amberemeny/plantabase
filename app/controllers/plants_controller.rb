@@ -4,9 +4,12 @@ class PlantsController < ApplicationController
   end
 
   def new
+    @plant = Plant.new
   end
 
   def create
+    Plant.create(plant_params)
+    redirect_to plants_path
   end
 
   def show
@@ -15,4 +18,10 @@ class PlantsController < ApplicationController
 
   def edit
   end
+
+  private
+  def plant_params
+    params.require(:plant).permit(:common_name, :sc_name, :img_url, :info)
+  end
+
 end

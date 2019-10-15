@@ -1,12 +1,13 @@
 <h1>Plant Database</h1>
+<%= link_to 'Add Plant to the Database', new_plant_path %>
     <% @plantlist.each do |data| %>
     <div class= "plant" >
         <img src="<%= data.img_url %>" width="150" height="150">
         <div class= "titles">
             <h3><%= data.common_name %></h3>
             <h5><i><%= data.sc_name %></i></h5>
-            <%= link_to 'Show Info', plants_show_path(data.id) %>
+            <%= link_to 'Show Info', plant_path(data.id) %>
         </div>
-        </div>
+    </div>
     <% end %>
 

@@ -1,2 +1,10 @@
 <h1>Plants#new</h1>
 <p>Find me in app/views/plants/new.html.erb</p>
+
+<%= form_with model: @plant, local: true do |f| %>
+    <%= f.label :common_name, :'Plant Name:' %> <%= f.text_field :common_name %><br>
+    <%= f.label :sc_name, :'Scientific Name:' %> <%= f.text_field :sc_name %><br>
+    <%= f.label :img_url, :'Image URL:' %> <%= f.text_field :img_url %><br>
+    <%= f.label :info, :'Information:' %> <%= f.text_area :info %><br>
+    <%= f.submit %>
+<% end %>
