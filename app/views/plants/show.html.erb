@@ -1,2 +1,5 @@
-<h1>Plants#show</h1>
-<p>Find me in app/views/plants/show.html.erb</p>
+<p><%= link_to 'Back to Plant Database', plants_path %></p>
+<h1><%= @plant.common_name %></h1>
+<h3><i><%= @plant.sc_name %></i></h3>
+<img src="<%= @plant.img_url %>" width="300" height="300">
+<p><%= @plant.info %></p>

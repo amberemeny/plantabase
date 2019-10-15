@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
   def index
+    @plantlist = Plant.order(:common_name).all
   end
 
   def new
@@ -9,6 +10,7 @@ class PlantsController < ApplicationController
   end
 
   def show
+    @plant = Plant.find(params[:id])
   end
 
   def edit

@@ -1,2 +1,12 @@
-<h1>Plants#index</h1>
-<p>Find me in app/views/plants/index.html.erb</p>
+<h1>Plant Database</h1>
+    <% @plantlist.each do |data| %>
+    <div class= "plant" >
+        <img src="<%= data.img_url %>" width="150" height="150">
+        <div class= "titles">
+            <h3><%= data.common_name %></h3>
+            <h5><i><%= data.sc_name %></i></h5>
+            <%= link_to 'Show Info', plants_show_path(data.id) %>
+        </div>
+        </div>
+    <% end %>
+
